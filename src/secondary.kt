@@ -1,3 +1,24 @@
+fun main() {
+    val student1 = student("Javidan", "Nasib", 123456)
+    val student2 = student("Vusal", "Ismayilov", 135791)
+
+    val lesson1 = lesson(lessonName = "Physics", credits = 4)
+    val lesson2 = lesson("Biology", 3)
+
+    val system = studentInfoSystem()
+
+    system.addLesson(lesson1)
+    system.addLesson(lesson2)
+
+    system.addStudent(student1)
+    system.addStudent(student2)
+
+
+    system.showStudentDatas()
+    system.showLessonDatas()
+}
+
+
 open class student(var name: String, var surname: String, val id: Int){
     fun studentDatas() : String {
         return name + surname + id
@@ -29,25 +50,4 @@ class studentInfoSystem {
     fun showLessonDatas() {
         lessons.forEach { println(it.lessonDatas()) }
     }
-}
-
-
-fun main() {
-    val student1 = student("Javidan", "Nasib", 123456)
-    val student2 = student("Vusal", "Ismayilov", 135791)
-
-    val lesson1 = lesson(lessonName = "Physics", credits = 4)
-    val lesson2 = lesson("Biology", 3)
-
-    val system = studentInfoSystem()
-
-    system.addLesson(lesson1)
-    system.addLesson(lesson2)
-
-    system.addStudent(student1)
-    system.addStudent(student2)
-
-
-    system.showStudentDatas()
-    system.showLessonDatas()
 }
